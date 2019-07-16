@@ -1,4 +1,4 @@
-const getNotes = require('./notes.js')
+const notes = require('./notes.js')
 const color = require('chalk')
 const yargs = require('yargs')
 
@@ -21,9 +21,9 @@ yargs.command(
             type: 'string'
         }
     },
-    handler: function(argv){
-        console.log('Title: ' + argv.title)
-        console.log('Body: ' + argv.body)
+    handler: function(argv)
+    {
+        notes.addNotes(argv.title, argv.body)
     }   
     })
 
