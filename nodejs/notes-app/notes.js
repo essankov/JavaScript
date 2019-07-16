@@ -14,9 +14,9 @@ const removeNote = function(title)
     })
     if(notes.length > notesToKeep.length)
     {
-        console.log(chalk.green.inverse('Note removed'))
+        console.log(chalk.green.inverse('Note removed!'))
     }else{
-        console.log(chalk.red.inverse('Note removed'))
+        console.log(chalk.red.inverse('No note found!'))
     }
 
     saveNotes(notesToKeep)
@@ -28,9 +28,7 @@ const addNotes = function(title, body)
     const duplicateNotes = notes.filter(function(note){
         return note.title === title
     })
-    saveNotes(notes)
-    console.log('Removing a note!')
-
+    
     if(duplicateNotes.length === 0)
     {
         notes.push({
@@ -38,9 +36,9 @@ const addNotes = function(title, body)
             body: body
         })
         saveNotes(notes)
-        console.log('New note added!')
+        console.log(chalk.green.inverse('New note added!'))
     } else{
-        console.log('Note title taken!')
+        console.log(chalk.red.inverse('Note title taken!'))
     }
 }
 
