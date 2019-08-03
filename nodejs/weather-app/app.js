@@ -6,7 +6,7 @@ setTimeout(() => {
 
 
 setTimeout(() => {
-    console.log('0 Second Timer') 
+    console.log('0 Second Timer')   
 }, 0)
 
 console.log('Stopping')
