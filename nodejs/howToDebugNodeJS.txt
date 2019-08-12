@@ -1,3 +1,0 @@
-1- insert 'debugger' where you want the code to stop
-2- go to chrome and enter 'chrome://inspect/#devices'
-
