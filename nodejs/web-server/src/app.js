@@ -20,14 +20,14 @@ app.use(express.static(publicDirectoryPath))
 app.get('', (req, res) => {
     res.render('index', {
         title: 'Weather',
-        name: 'Essa Alkhamees'
+        name: 'Essa'
     })
 })
 
 app.get('/about', (req, res) =>{
     res.render('about', {
         title: 'About Me',
-        name: 'Essa Alkhamees'
+        name: 'Essa'
     })
 })
 
@@ -44,6 +44,22 @@ app.get('/weather', (req, res) => {
         city: 'Kansas City',
         latitude: 39.0997222,
         longitude: -94.5783333
+    })
+})
+
+app.get('/help/*', (req, res) => {
+    res.render('404',{
+        title: '404',
+        name: 'Essa',
+        message: 'Help article not found.'
+    })
+})
+
+app.get('*', (req, res) => {
+    res.render('404',{
+        title: '404',
+        name: 'Essa',
+        message: 'Page not found'
     })
 })
 
