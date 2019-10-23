@@ -1,6 +1,6 @@
 //  .findIndex
 let array = [600, 400, 300, 1402, 948, 133, 200, 99]
-array.findIndex((value) => value > 300)
+array.findIndex((value) => value > 600)
 
 //  .filter
 let array = [600, 400, 300, 1402, 948, 133, 200, 99]
@@ -12,7 +12,7 @@ let products = [
     { name: "Physics book", price: 33 }
 ]
 
-let expensiveProducts = products.filter((product) => product.price)
+let expensiveProducts = products.filter((product) => product.price >= 15)
 
 //  .map
 let products = [
@@ -42,8 +42,8 @@ let users = [
     { name: "Satya Nadella", age: 52}
 ]
 
-users.some(user => user.age <= 70)
-users.every(user => user.age <= 70)
+users.some(user => user.age <= 50) //true
+users.every(user => user.age <= 50) //false
 
 
 //  .reduce
