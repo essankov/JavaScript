@@ -23,9 +23,13 @@ let count = 0
 io.on('connection', (socket) => {
     console.log('New webSocket connection')
 
+    socket.on('join', ({ username, room }) => {
+        socket.join(room)
+
         socket.emit('message', generateMessage('Welcome!'))
-    
-    socket.broadcast.emit('message', generateMessage('A new user has joined!'))
+        socket.broadcast.to(room).emit('message', generateMessage(`${username} has joined!`))
+
+    })
 
     socket.on('sendMessage', (message, callback) => {
         const filter = new Filter()
