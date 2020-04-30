@@ -6,7 +6,9 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "env-cmd ./config/dev.env nodemon src/index.js",
-    "test": "env-cmd  ./config/test.env jest --watch --runInBand"
+    "test": "env-cmd  ./config/test.env jest --watch --runInBand",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "jest": {
     "testEnvironment": "node"
@@ -22,12 +24,14 @@
     "mongoose": "^5.7.11",
     "multer": "^1.4.2",
     "sharp": "^0.23.3",
-    "validator": "^11.1.0"
+    "validator": "^11.1.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "env-cmd": "^8.0.2",
     "jest": "^25.0.0",
     "nodemon": "^1.19.4",
     "supertest": "^4.0.2"
-  }
+  },
+  "snyk": true
 }
